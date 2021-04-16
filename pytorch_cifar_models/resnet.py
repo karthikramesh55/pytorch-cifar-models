@@ -96,14 +96,6 @@ class BasicBlock(nn.Module):
         out += identity
         out = self.relu(out)
         return out
-      
-    def inference_time(self):
-        time0 = time.time()
-        self.forward(torch.rand(1, 3, 96, 96))
-        time1 = time.time()        
-        print("The inference time in milliseconds (ms): " + str(round((time1 - time0)*1000, 5)))
-        #return str(round((time1 - time0)*1000, 5))
-
 
 class CifarResNet(nn.Module):
 
